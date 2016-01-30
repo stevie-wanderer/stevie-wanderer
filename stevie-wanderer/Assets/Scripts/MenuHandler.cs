@@ -8,8 +8,16 @@ public class MenuHandler : MonoBehaviour {
 	public GameObject menuScreen;
 	public GameObject creditsScreen;
 
+	public CircleOpenerHandler circleOpenerHandler;
+
+	public bool gameStarted = false;
+
 	// Use this for initialization
 	void Start () {
+
+		this.circleOpenerHandler = GameObject.FindObjectOfType<CircleOpenerHandler>();
+		this.circleOpenerHandler.OpenCircle();
+
 		this.startScreen.SetActive(true);
 		this.menuScreen.SetActive(false);
 		this.creditsScreen.SetActive(false);
@@ -30,11 +38,23 @@ public class MenuHandler : MonoBehaviour {
 	}
 
 	public void StartGameButtonPressed () {
-		SceneManager.LoadScene(1);
+		if (this.gameStarted == false) {
+			StartCoroutine("StartGameWithDelay");
+		}
 	}
 
 	public void CloseCreditsButtonPressed () {
 		this.creditsScreen.SetActive(false);
 		this.menuScreen.SetActive(true);
+	}
+
+	// Helpers
+	IEnumerator StartGameWithDelay() {
+
+		this.circleOpenerHandler.CloseCircle();
+
+		yield return new WaitForSeconds(3.0f);
+
+		SceneManager.LoadScene(1);
 	}
 }
