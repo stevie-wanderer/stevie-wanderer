@@ -4,25 +4,25 @@ using System.Collections;
 
 public class Obstacle : MonoBehaviour {
 
+	public float leftContraint;
+	public float rightConstraint;
+
 	Transform stevie;
 
 	void Start() {
 		stevie = FindObjectOfType<Stevie> ().transform;
+
+		InvokeRepeating ("UpdateBoxPos", 5.0f, 5.0f);
 	}
 
 	// Update is called once per frame
-	void Update () {
-		if (this.stevie.position.z - this.transform.position.z > 10) {
-			Vector3 newPos = Vector3.up * 1.5f;
-			newPos.z = Mathf.Round (this.stevie.position.z + 15);
-			newPos.x = Mathf.Round (Random.Range (-2, 3));
+	void UpdateBoxPos () {
+		if (this.stevie.position.z - this.transform.position.z > 10f) {
+			Vector3 newPos = transform.position;
+			newPos.z = Mathf.Round (this.stevie.position.z + 20f);
+			newPos.x = Mathf.Round (Random.Range (leftContraint, rightConstraint));
 			this.transform.position = newPos;
-		}
-
-
-		if (Input.GetKeyDown (KeyCode.R)) {
-			Time.timeScale = 1.0f;
-			SceneManager.LoadScene (0);
+			this.transform.eulerAngles = Vector3.up * (Random.Range (0, 4) * 90);
 		}
 	}
 
