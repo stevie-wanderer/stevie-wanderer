@@ -75,7 +75,223 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 58
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Back_Leg_IK_L
+        weight: 1
+      - path: Armature/Back_Leg_IK_L/Leg_L
+        weight: 1
+      - path: Armature/Back_Leg_IK_R
+        weight: 1
+      - path: Armature/Back_Leg_IK_R/Leg_R
+        weight: 1
+      - path: Armature/Front_Leg_IK_L
+        weight: 1
+      - path: Armature/Front_Leg_IK_L/Front_Leg_L
+        weight: 1
+      - path: Armature/Front_Leg_IK_R
+        weight: 1
+      - path: Armature/Front_Leg_IK_R/Front_Leg_R
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_L/Back_Lower_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_R/Back_Lower_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Chest
+        weight: 1
+      - path: Armature/Stomach/Chest/Head
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_L/Front_Lower_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_R/Front_Lower_Leg_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Back_Leg_IK_L
+        weight: 1
+      - path: Armature/Back_Leg_IK_L/Leg_L
+        weight: 1
+      - path: Armature/Back_Leg_IK_R
+        weight: 1
+      - path: Armature/Back_Leg_IK_R/Leg_R
+        weight: 1
+      - path: Armature/Front_Leg_IK_L
+        weight: 1
+      - path: Armature/Front_Leg_IK_L/Front_Leg_L
+        weight: 1
+      - path: Armature/Front_Leg_IK_R
+        weight: 1
+      - path: Armature/Front_Leg_IK_R/Front_Leg_R
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_L/Back_Lower_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_R/Back_Lower_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Chest
+        weight: 1
+      - path: Armature/Stomach/Chest/Head
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_L/Front_Lower_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_R/Front_Lower_Leg_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: -1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Back_Leg_IK_L
+        weight: 1
+      - path: Armature/Back_Leg_IK_L/Leg_L
+        weight: 1
+      - path: Armature/Back_Leg_IK_R
+        weight: 1
+      - path: Armature/Back_Leg_IK_R/Leg_R
+        weight: 1
+      - path: Armature/Front_Leg_IK_L
+        weight: 1
+      - path: Armature/Front_Leg_IK_L/Front_Leg_L
+        weight: 1
+      - path: Armature/Front_Leg_IK_R
+        weight: 1
+      - path: Armature/Front_Leg_IK_R/Front_Leg_R
+        weight: 1
+      - path: Armature/Stomach
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_L/Back_Lower_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Back_Upper_Leg_R/Back_Lower_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Chest
+        weight: 1
+      - path: Armature/Stomach/Chest/Head
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_L/Front_Lower_Leg_L
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_R
+        weight: 1
+      - path: Armature/Stomach/Front_Upper_Leg_R/Front_Lower_Leg_R
+        weight: 1
+      - path: Cube
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

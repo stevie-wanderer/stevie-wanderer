@@ -16,6 +16,11 @@ public class Stevie : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		this.myRigidBody.AddForce (Vector3.forward * 10);
+
+		// Prevents moving backwards 
+		Vector3 vel = this.myRigidBody.velocity;
+		vel.z = Mathf.Max (0, vel.z);
+		this.myRigidBody.velocity = vel;
 	}
 
 	void Update() {
