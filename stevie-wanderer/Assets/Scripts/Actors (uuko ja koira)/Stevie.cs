@@ -8,16 +8,17 @@ public class Stevie : MonoBehaviour {
 	public AudioClip letsgo;
 	public AudioClip bumpedToBox;
 	public AudioClip[] coughs;
+	public AudioClip[] stepSounds;
 
 	private Rigidbody myRigidBody;
 	private bool canPlayAudio = false;
-	private int lastCough = -1;
 
 	void Start() {
 		this.GetComponent<Rigidbody> ().velocity = Vector3.forward;
 		this.myRigidBody = GetComponent<Rigidbody>();
 		Invoke ("ReleaseAudio", 5.0f);
 		Invoke("Cough", this.NextCoughDelay());
+		PlayStepsSound ();
 	}
 
 	// Update is called once per frame
@@ -60,8 +61,7 @@ public class Stevie : MonoBehaviour {
 	}
 
 	void Cough() {
-		lastCough = (lastCough + 1) % coughs.Length;
-		AudioClip cough = coughs[lastCough];
+		AudioClip cough = coughs[Mathf.FloorToInt(Random.Range(0, coughs.Length))];
 		PlayAudio (cough);
 		Invoke("Cough", this.NextCoughDelay());
 	}
@@ -70,5 +70,11 @@ public class Stevie : MonoBehaviour {
 		if (c.gameObject.GetComponent<Obstacle> () != null) {
 			GetComponent<AudioSource> ().PlayOneShot(bumpedToBox);
 		}
+	}
+
+	void PlayStepsSound() {
+		AudioClip clip = stepSounds[Mathf.FloorToInt(Random.Range(0, stepSounds.Length))];
+		GetComponent<AudioSource> ().PlayOneShot(clip);
+		Invoke ("PlayStepsSound", clip.length);
 	}
 }
