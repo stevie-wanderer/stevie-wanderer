@@ -16,18 +16,8 @@ public class Dog : MonoBehaviour {
 
 		this.velocity = Vector3.zero;
 
-		if (Input.GetKey (KeyCode.UpArrow)) {
-			this.velocity += Vector3.forward;
-		}
-		if (Input.GetKey (KeyCode.DownArrow)) {
-			this.velocity -= Vector3.forward;
-		}
-		if (Input.GetKey (KeyCode.LeftArrow)) {
-			this.velocity += Vector3.left;
-		}
-		if (Input.GetKey (KeyCode.RightArrow)) {
-			this.velocity += Vector3.right;
-		}
+		this.velocity += Input.GetAxis ("Horizontal") * -Vector3.forward;
+		this.velocity += Input.GetAxis ("Vertical") * Vector3.right;
 
 		float multiplier = 4.0f;
 		float zDiff = stevie.position.z - transform.position.z;
