@@ -16,7 +16,6 @@ public class MenuHandler : MonoBehaviour {
 	void Start () {
 
 		this.circleOpenerHandler = GameObject.FindObjectOfType<CircleOpenerHandler>();
-		this.circleOpenerHandler.OpenCircle();
 
 		this.startScreen.SetActive(true);
 		this.menuScreen.SetActive(false);

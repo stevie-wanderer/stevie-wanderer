@@ -8,6 +8,13 @@ public class CircleOpenerHandler : MonoBehaviour {
 	private float maxScaleValue = 2000.0f;
 	private float minScaleValue = 0.85f;
 
+	void Start () {
+
+		this.GetComponent<Camera>().enabled = true;
+
+		OpenCircle();
+	}
+
 	public void CloseCircle () {
 		StartCoroutine("CloseCircleCoroutine");
 	}
