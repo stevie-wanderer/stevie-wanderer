@@ -17,7 +17,7 @@ public class TaxiMover : StevieKiller {
 	}
 
 	void SpawnNewTaxi() {
-		this.speed += 0.04f;
+		this.speed += this.speed * 0.5f;
 		if (this.transform.position.z > GetStevie ().position.z + spawnDistance) {
 			Vector3 newPos = this.transform.position;
 			newPos.z = GetStevie ().position.z - spawnDistance;
