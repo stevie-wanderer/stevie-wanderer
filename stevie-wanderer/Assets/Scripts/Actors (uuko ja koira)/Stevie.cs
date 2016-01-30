@@ -6,6 +6,7 @@ public class Stevie : MonoBehaviour {
 	public Animator stevieAnimator;
 	public Transform stevieRotator;
 	public AudioClip letsgo;
+	public AudioClip bumpedToBox;
 	public AudioClip[] coughs;
 
 	private Rigidbody myRigidBody;
@@ -63,5 +64,11 @@ public class Stevie : MonoBehaviour {
 		AudioClip cough = coughs[lastCough];
 		PlayAudio (cough);
 		Invoke("Cough", this.NextCoughDelay());
+	}
+
+	void OnCollisionEnter(Collision c) {
+		if (c.gameObject.GetComponent<Obstacle> () != null) {
+			GetComponent<AudioSource> ().PlayOneShot(bumpedToBox);
+		}
 	}
 }
