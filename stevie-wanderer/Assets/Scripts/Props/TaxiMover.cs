@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TaxiMover : MonoBehaviour {
+public class TaxiMover : StevieKiller {
 
 	public float speed = 0.1f;
 
