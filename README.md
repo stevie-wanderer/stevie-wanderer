@@ -31,6 +31,10 @@ You are the guide dog of Stevie Wanderer. Protect Stevie from:
 * Slippery stuff to step on
 * Anything that might kill Stevie
 
+### Screenshots
+
+![Screenshot 1](http://globalgamejam.org/sites/default/files/styles/game_content__wide_2x/public/games/screenshots/screen_shot_2016-01-31_at_16.36.00.png)
+
 ## Contributing
 
 If you'd like to contribute to the game, feel free to fork the repo and open
