@@ -7,6 +7,7 @@ public class Dog : MonoBehaviour {
 	private const float MAX_HIHNA_LENGTH = 5.0f;
 	Transform stevie;
 	public Animator dogeAnimator;
+	public Transform dogeRagdoll;
 
 	private bool canPlayAudio = false;
 
@@ -69,5 +70,22 @@ public class Dog : MonoBehaviour {
 		canPlayAudio = false;
 		Invoke ("ReleaseAudio", 5.0f);
 		GetComponent<AudioSource> ().Play ();
+	}
+
+
+	public void Die(Vector3 atPoint, float amount) {
+		Transform ragdoll = (Transform)Instantiate (dogeRagdoll, dogeAnimator.transform.position, dogeAnimator.transform.rotation);
+		Rigidbody[] ragdollBodies = ragdoll.GetComponentsInChildren<Rigidbody> ();
+		foreach (Rigidbody ragdollBody in ragdollBodies) {
+			ragdollBody.AddExplosionForce (amount, atPoint, 2.0f);
+		}
+
+		Debug.Log ("Game Over");
+		Debug.Log ("Your score: " + Mathf.Round(transform.position.z));
+		//Time.timeScale = 0;
+
+		CancelInvoke ();
+
+		this.gameObject.SetActive (false);
 	}
 }
