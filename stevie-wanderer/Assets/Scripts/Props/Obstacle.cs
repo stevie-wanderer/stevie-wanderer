@@ -27,11 +27,9 @@ public class Obstacle : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision c) {
-		if (c.gameObject.GetComponent<Stevie> ()) {
-			Debug.Log ("Game Over");
-			Debug.Log ("Your score: " + Mathf.Round(stevie.position.z));
-			Time.timeScale = 0;
-			Debug.Log ("Press 'r' to restart");
+		Stevie stevie = c.gameObject.GetComponent<Stevie> ();
+		if (stevie) {
+			stevie.Die ();
 		}
 	}
 }

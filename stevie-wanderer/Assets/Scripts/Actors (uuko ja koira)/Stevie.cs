@@ -9,6 +9,7 @@ public class Stevie : MonoBehaviour {
 	public AudioClip bumpedToBox;
 	public AudioClip[] coughs;
 	public AudioClip[] stepSounds;
+	public Transform stevieRagdoll;
 
 	private Rigidbody myRigidBody;
 	private bool canPlayAudio = false;
@@ -76,5 +77,19 @@ public class Stevie : MonoBehaviour {
 		AudioClip clip = stepSounds[Mathf.FloorToInt(Random.Range(0, stepSounds.Length))];
 		GetComponent<AudioSource> ().PlayOneShot(clip);
 		Invoke ("PlayStepsSound", clip.length);
+	}
+
+	public void Die() {
+		Instantiate (stevieRagdoll, stevieAnimator.transform.position, stevieAnimator.transform.rotation);
+
+		Debug.Log ("Game Over");
+		Debug.Log ("Your score: " + Mathf.Round(transform.position.z));
+		//Time.timeScale = 0;
+		Debug.Log ("Press 'r' to restart");
+
+		Camera.main.transform.parent = null;
+
+		CancelInvoke ();
+		this.gameObject.SetActive (false);
 	}
 }
