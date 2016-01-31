@@ -19,6 +19,10 @@ public class CircleOpenerHandler : MonoBehaviour {
 		StartCoroutine("CloseCircleCoroutine");
 	}
 
+	public void CloseCircleAfter(float time) {
+		Invoke ("CloseCircle", time);
+	}
+
 	IEnumerator CloseCircleCoroutine() {
 
 		this.circleOpener.SetActive(true);
