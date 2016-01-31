@@ -1,4 +1,4 @@
-# Stevie Wanderer
+# Stevie Wanderer & His Daily Rituals
 > Just another Global Game Jam 2016 game
 
 This is a free game made in 48 hours at Global Game Jam 2016.
@@ -7,7 +7,7 @@ This is a free game made in 48 hours at Global Game Jam 2016.
 
 You can play the game for free at:
 
-INSERT_LINK_HERE_WHEN_THE_GAME_IS_PUBLISHED
+http://stevie-wanderer.github.io/stevie-wanderer/
 
 ## Developing
 
@@ -18,7 +18,8 @@ Unity.
 
 The game is working with the following build platforms:
 
-* None (at the moment)
+* WebGL
+* Desktop
 
 ## Features
 
