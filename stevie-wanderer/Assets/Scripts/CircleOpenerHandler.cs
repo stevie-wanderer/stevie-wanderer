@@ -36,7 +36,7 @@ public class CircleOpenerHandler : MonoBehaviour {
 
 			this.circleOpener.transform.localScale = new Vector3(newLocalScale,newLocalScale,newLocalScale);
 
-			AudioListener.volume *= 0.5f;
+			AudioListener.volume *= 0.97f;
 
 			yield return new WaitForEndOfFrame();
 		}
@@ -59,7 +59,7 @@ public class CircleOpenerHandler : MonoBehaviour {
 
 			this.circleOpener.transform.localScale = new Vector3(newLocalScale,newLocalScale,newLocalScale);
 
-			AudioListener.volume = Mathf.Min(0.5f, AudioListener.volume * 2f);
+			AudioListener.volume = Mathf.Min(0.5f, AudioListener.volume / 0.97f);
 
 			yield return new WaitForEndOfFrame();
 		}
