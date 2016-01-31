@@ -14,6 +14,7 @@ public class Stevie : MonoBehaviour {
 
 	private Rigidbody myRigidBody;
 	private bool canPlayAudio = false;
+	private bool hasStarted = false;
 
 	void Start() {
 		this.GetComponent<Rigidbody> ().velocity = Vector3.forward;
@@ -25,7 +26,7 @@ public class Stevie : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		this.myRigidBody.AddForce (Vector3.forward * 10);
+		this.myRigidBody.AddForce (Vector3.forward * (hasStarted ? 10 : 0));
 
 		// Prevents moving backwards 
 		Vector3 vel = this.myRigidBody.velocity;
@@ -37,8 +38,8 @@ public class Stevie : MonoBehaviour {
 		canPlayAudio = true;
 	}
 
-	void PlayAudio(AudioClip clip) {
-		if (!canPlayAudio)
+	void PlayAudio(AudioClip clip, bool force = false) {
+		if (!canPlayAudio && !force)
 			return;
 		canPlayAudio = false;
 		Invoke ("ReleaseAudio", 5.0f);
@@ -46,6 +47,13 @@ public class Stevie : MonoBehaviour {
 	}
 
 	void Update() {
+		if (!hasStarted) {
+			if (Input.GetAxis ("Horizontal") != 0 || Input.GetAxis ("Vertical") != 0) {
+				hasStarted = true;
+				PlayAudio (letsgo, true);
+			}
+		}
+
 		// Calculate angle difference to the velocity so stevie "walks" also when he's only rotating
 		float angleDiff = Vector3.Angle(stevieRotator.forward, this.myRigidBody.velocity);
 
