@@ -15,6 +15,19 @@ public class DistanceLabel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.text.text = Mathf.Round(stevie.position.z) + " METERS TRAVELLED";
+		int highScore = PlayerPrefs.GetInt ("HIGH_SCORE_1", 0);
+		int currScore = Mathf.RoundToInt (stevie.position.z);
+
+		string color = "#FFFFFF";
+
+		if (currScore > highScore) {
+			PlayerPrefs.SetInt ("HIGH_SCORE_1", currScore);
+			highScore = currScore;
+		}
+		if (currScore == highScore) {
+			color = "#f67687";
+		}
+
+		this.text.text = currScore + " METERS TRAVELLED\n<size=\"12\"><color=\"" + color + "\">LOCAL HIGH SCORE: " + highScore + " METERS</color></size>";
 	}
 }
