@@ -4,6 +4,7 @@ using System.Collections;
 public class StevieKiller : MonoBehaviour {
 
 	Transform stevie;
+	public int damage = 1;
 
 	public void Start() {
 		stevie = FindObjectOfType<Stevie> ().transform;
@@ -14,11 +15,9 @@ public class StevieKiller : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision c) {
-		if (c.gameObject.GetComponent<Stevie> ()) {
-			Debug.Log ("Game Over");
-			Debug.Log ("Your score: " + Mathf.Round(stevie.position.z));
-			Time.timeScale = 0;
-			Debug.Log ("Press 'r' to restart");
+		Stevie hitStevie = c.gameObject.GetComponent<Stevie> ();
+		if (hitStevie != null) {
+			hitStevie.LoseHealth (this.damage, c.contacts[0].point);
 		}
 	}
 }

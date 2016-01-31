@@ -6,9 +6,9 @@ public class Obstacle : StevieKiller {
 
 	public float leftContraint;
 	public float rightConstraint;
-	public int damage = 1;
 
-	void Start() {
+
+	new public void Start() {
 		InvokeRepeating ("UpdateBoxPos", 5.0f, 5.0f);
 		base.Start ();
 	}
@@ -21,14 +21,6 @@ public class Obstacle : StevieKiller {
 			newPos.x = Mathf.Round (Random.Range (leftContraint, rightConstraint));
 			this.transform.position = newPos;
 			this.transform.eulerAngles = Vector3.up * (Random.Range (0, 4) * 90);
-		}
-	}
-
-	void OnCollisionEnter(Collision c) {
-		Stevie stevie = c.gameObject.GetComponent<Stevie> ();
-		if (stevie) {
-			stevie.LoseHealth (this.damage);
-			//this.GetComponent<Rigidbody> ().isKinematic = false;
 		}
 	}
 }
