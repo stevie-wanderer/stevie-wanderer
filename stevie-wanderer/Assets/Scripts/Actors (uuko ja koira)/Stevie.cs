@@ -94,11 +94,11 @@ public class Stevie : MonoBehaviour {
 		Debug.Log ("Game Over");
 		Debug.Log ("Your score: " + Mathf.Round(transform.position.z));
 		//Time.timeScale = 0;
-		Debug.Log ("Press 'r' to restart");
 
 		Camera.main.transform.parent = null;
 
 		CancelInvoke ();
+
 		this.gameObject.SetActive (false);
 	}
 }
