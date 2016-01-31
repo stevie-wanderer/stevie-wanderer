@@ -1,4 +1,5 @@
-![Stevie Wanderer & His Daily Rituals](http://stevie-wanderer.github.io/stevie-wanderer/stevie-wanderer-fb-image.png)
+<img alt="Stevie Wanderer & His Daily Rituals" src="http://stevie-wanderer.github.io/stevie-wanderer/stevie-wanderer-fb-image.png"
+ width="200">
 
 # Stevie Wanderer & His Daily Rituals
 > Just another Global Game Jam 2016 game
