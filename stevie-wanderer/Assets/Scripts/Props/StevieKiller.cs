@@ -15,7 +15,7 @@ public class StevieKiller : MonoBehaviour {
 		return stevie;
 	}
 
-	void OnCollisionEnter(Collision c) {
+	public void OnCollisionEnter(Collision c) {
 		Stevie hitStevie = c.gameObject.GetComponent<Stevie> ();
 		if (hitStevie != null) {
 			hitStevie.LoseHealth (this.damage, c.contacts[0].point);
