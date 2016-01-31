@@ -80,16 +80,20 @@ public class Stevie : MonoBehaviour {
 		Invoke ("PlayStepsSound", clip.length);
 	}
 
-	public void LoseHealth(int amount) {
+	public void LoseHealth(int amount, Vector3 atPoint) {
 		this.health = Mathf.Max (0, this.health - amount);
 		Debug.Log ("Stevie's health: " + this.health);
 		if (this.health == 0) {
-			this.Die ();
+			this.Die (atPoint, 15.0f * amount);
 		}
 	}
 
-	void Die() {
-		Instantiate (stevieRagdoll, stevieAnimator.transform.position, stevieAnimator.transform.rotation);
+	void Die(Vector3 atPoint, float amount) {
+		Transform ragdoll = (Transform)Instantiate (stevieRagdoll, stevieAnimator.transform.position, stevieAnimator.transform.rotation);
+		Rigidbody[] ragdollBodies = ragdoll.GetComponentsInChildren<Rigidbody> ();
+		foreach (Rigidbody ragdollBody in ragdollBodies) {
+			ragdollBody.AddExplosionForce (amount, atPoint, 2.0f);
+		}
 
 		Debug.Log ("Game Over");
 		Debug.Log ("Your score: " + Mathf.Round(transform.position.z));
