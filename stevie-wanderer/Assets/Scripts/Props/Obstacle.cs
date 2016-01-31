@@ -6,6 +6,7 @@ public class Obstacle : MonoBehaviour {
 
 	public float leftContraint;
 	public float rightConstraint;
+	public int damage = 1;
 
 	Transform stevie;
 
@@ -29,7 +30,8 @@ public class Obstacle : MonoBehaviour {
 	void OnCollisionEnter(Collision c) {
 		Stevie stevie = c.gameObject.GetComponent<Stevie> ();
 		if (stevie) {
-			stevie.Die ();
+			stevie.LoseHealth (this.damage);
+			//this.GetComponent<Rigidbody> ().isKinematic = false;
 		}
 	}
 }
