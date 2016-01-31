@@ -33,8 +33,10 @@ public class CircleOpenerHandler : MonoBehaviour {
 		while (this.circleOpener.transform.localScale.x > this.minScaleValue) {
 			float newLocalScale = Mathf.Lerp(this.maxScaleValue, this.minScaleValue, (elapsedTime / time));
 			elapsedTime += Time.deltaTime;
-			Debug.Log(newLocalScale);
+
 			this.circleOpener.transform.localScale = new Vector3(newLocalScale,newLocalScale,newLocalScale);
+
+			AudioListener.volume *= 0.5f;
 
 			yield return new WaitForEndOfFrame();
 		}
@@ -56,6 +58,8 @@ public class CircleOpenerHandler : MonoBehaviour {
 			elapsedTime += Time.deltaTime;
 
 			this.circleOpener.transform.localScale = new Vector3(newLocalScale,newLocalScale,newLocalScale);
+
+			AudioListener.volume = Mathf.Min(0.5f, AudioListener.volume * 2f);
 
 			yield return new WaitForEndOfFrame();
 		}
