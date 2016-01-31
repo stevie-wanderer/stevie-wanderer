@@ -1,0 +1,12 @@
+<linker>
+	<assembly fullname="Assembly-CSharp">
+		<type fullname="MenuHandler">
+			<method name="CreditsButtonPressed"/>
+			<method name="CloseCreditsButtonPressed"/>
+			<method name="StartGameButtonPressed"/>
+		</type>
+		<type fullname="MainMenuButton">
+			<method name="ButtonCLicked"/>
+		</type>
+	</assembly>
+</linker>
