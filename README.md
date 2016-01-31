@@ -1,3 +1,5 @@
+![Stevie Wanderer & His Daily Rituals](http://stevie-wanderer.github.io/stevie-wanderer/stevie-wanderer-fb-image.png)
+
 # Stevie Wanderer & His Daily Rituals
 > Just another Global Game Jam 2016 game
 
