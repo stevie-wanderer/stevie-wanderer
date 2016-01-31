@@ -11,6 +11,7 @@ public class CircleOpenerHandler : MonoBehaviour {
 	void Start () {
 
 		this.GetComponent<Camera>().enabled = true;
+		this.circleOpener.SetActive(true);
 
 		OpenCircle();
 	}
@@ -51,7 +52,7 @@ public class CircleOpenerHandler : MonoBehaviour {
 		this.circleOpener.SetActive(true);
 
 		float elapsedTime = 0.0f;
-		float time = 2.5f;
+		float time = 1.5f;
 
 		while (this.circleOpener.transform.localScale.x < this.maxScaleValue) {
 			float newLocalScale = Mathf.Lerp(this.minScaleValue, this.maxScaleValue, (elapsedTime / time));

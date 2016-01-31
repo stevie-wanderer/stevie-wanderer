@@ -5,11 +5,11 @@ using System.Collections;
 public class MainMenuButton : MonoBehaviour {
 
 	public void ButtonCLicked () {
-		FindObjectOfType<CircleOpenerHandler> ().CloseCircleAfter (2.0f);
-		Invoke ("RestartLevel", 3.5f);
+		FindObjectOfType<CircleOpenerHandler> ().CloseCircle();
+		Invoke ("RestartLevel", 2.0f);
 	}
 
 	void RestartLevel() {
-		SceneManager.LoadScene (1);
+		SceneManager.LoadScene (0);
 	}
 }
