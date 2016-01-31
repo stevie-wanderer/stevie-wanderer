@@ -14,7 +14,7 @@ http://stevie-wanderer.github.io/stevie-wanderer/
 
 ## Developing
 
-Clone the repository and install Unity. Open the `stevie-wanderer/` folder in
+Clone the repository and install Unity. Open the `source/` folder in
 Unity.
 
 ### Building
